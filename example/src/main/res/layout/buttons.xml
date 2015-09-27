@@ -4,21 +4,23 @@
     android:orientation="horizontal"
     android:layout_gravity="center_horizontal|bottom"
     android:layout_marginBottom="20dp"
+    android:layout_marginTop="40dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
     <Button
         android:id="@+id/left"
-        android:layout_margin="10dp"
-        android:text="Take Down"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_margin="20dp"
+        android:background="@drawable/hookembad"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        />
 
     <Button
         android:id="@+id/right"
-        android:layout_margin="10dp"
-        android:text="Keep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_margin="20dp"
+        android:background="@drawable/hookem"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
 
 </LinearLayout>

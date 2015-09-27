@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Swipe cards</string>
+    <string name="app_name">Wreck it Rotman</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Stats</string>
+    <string name="title_activity_stats">StatsActivity</string>
 
 </resources>

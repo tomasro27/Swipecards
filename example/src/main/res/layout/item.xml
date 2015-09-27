@@ -4,7 +4,7 @@
     android:layout_gravity="center"
     android:layout_width="250dp"
     android:layout_height="300dp"
-    android:background="#CF5300">
+    android:background="@android:color/white">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -12,8 +12,11 @@
         <TextView
             android:id="@+id/helloText"
             android:textSize="20sp"
-            android:textColor="@android:color/white"
-            android:background="#CF5300"
+            android:padding="5dp"
+            android:textColor="#CF5300"
+            android:background="@android:color/white"
+            android:fontFamily="Roboto"
+            android:textStyle="bold"
             tools:text="The Tower"
             android:layout_width="wrap_content"
             android:layout_centerHorizontal="true"
@@ -35,18 +38,18 @@
     <View
         android:id="@+id/item_swipe_left_indicator"
         android:alpha="0"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_margin="10dp"
-        android:background="#A5F" />
+        android:background="@drawable/heart" />
 
     <View
         android:id="@+id/item_swipe_right_indicator"
         android:alpha="0"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_margin="10dp"
         android:layout_gravity="right"
-        android:background="#5AF" />
+        android:background="@drawable/delete" />
 
 </FrameLayout>
