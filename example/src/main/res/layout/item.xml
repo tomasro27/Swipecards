@@ -3,17 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:layout_width="250dp"
-    android:layout_height="170dp">
+    android:layout_height="300dp"
+    android:background="#CF5300">
 
-    <TextView
-        android:id="@+id/helloText"
-        android:textSize="40sp"
-        android:textColor="@android:color/white"
-        android:background="#E339"
-        android:gravity="center"
-        tools:text="@string/hello_world"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/helloText"
+            android:textSize="20dp"
+            android:textColor="@android:color/white"
+            android:background="#CF5300"
+            tools:text="The Tower"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"/>
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_above="@id/helloText"
+            android:src="@drawable/ic_launcher"
+            android:id="@+id/imageView"/>
+    </RelativeLayout>
+
 
     <View
         android:id="@+id/item_swipe_left_indicator"
