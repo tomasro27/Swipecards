@@ -21,8 +21,10 @@ public class MyActivity extends Activity {
 
     private ArrayList<String> al;
     private ArrayAdapter<String> arrayAdapter;
+    private SwipeCardsCustomAdapter adapter;
     private int i;
-
+    private String[] titles = {"UT Tower", "GDC Main Gate"};
+    private int[] imageResources = {R.drawable.bomb, R.drawable.ic_launcher};
     @InjectView(R.id.frame) SwipeFlingAdapterView flingContainer;
 
 
@@ -44,9 +46,9 @@ public class MyActivity extends Activity {
         al.add("javascript");
 
         arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, al );
+        adapter = new SwipeCardsCustomAdapter(titles, imageResources, this);
 
-
-        flingContainer.setAdapter(arrayAdapter);
+        flingContainer.setAdapter(adapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
             public void removeFirstObjectInAdapter() {
