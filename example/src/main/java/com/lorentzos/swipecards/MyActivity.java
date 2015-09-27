@@ -5,13 +5,11 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
-import java.util.Queue;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -33,11 +31,31 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
         ButterKnife.inject(this);
 
-        titles.add("Jefferson ");
-        titles.add("Ralph");
+        titles.add("Jefferson Davis");
+        titles.add("UT Punter vs. OSU");
+        titles.add("UT Tower");
+        titles.add("PCL");
+        titles.add("Cabo Bob's");
+        titles.add("Big Bite");
+        titles.add("GDC Sculpture");
+        titles.add("Clock Knot");
+        titles.add("GDC Door That's Been Broken For Months");
+        titles.add("Niko");
+        titles.add("J2");
+        titles.add("Giant Canoe Sculpture on Speedway");
 
-        imageResources.add(R.drawable.bomb);
-        imageResources.add(R.drawable.ic_launcher);
+        imageResources.add(R.drawable.leff);
+        imageResources.add(R.drawable.punter);
+        imageResources.add(R.drawable.tower);
+        imageResources.add(R.drawable.pcl);
+        imageResources.add(R.drawable.cabo_bobs);
+        imageResources.add(R.drawable.bigbite);
+        imageResources.add(R.drawable.gdc);
+        imageResources.add(R.drawable.clock);
+        imageResources.add(R.drawable.gdc_door);
+        imageResources.add(R.drawable.niko);
+        imageResources.add(R.drawable.j2);
+        imageResources.add(R.drawable.canoe);
 
         adapter = new SwipeCardsCustomAdapter(titles, imageResources, this);
 
