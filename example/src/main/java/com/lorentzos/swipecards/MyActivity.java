@@ -11,6 +11,7 @@ import android.widget.Toast;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -19,12 +20,10 @@ import butterknife.OnClick;
 
 public class MyActivity extends Activity {
 
-    private ArrayList<String> al;
-    private ArrayAdapter<String> arrayAdapter;
     private SwipeCardsCustomAdapter adapter;
     private int i;
-    private String[] titles = {"UT Tower", "GDC Main Gate"};
-    private int[] imageResources = {R.drawable.bomb, R.drawable.ic_launcher};
+    private ArrayList<String> titles = new ArrayList<>();
+    private ArrayList<Integer> imageResources = new ArrayList<>();
     @InjectView(R.id.frame) SwipeFlingAdapterView flingContainer;
 
 
@@ -34,19 +33,14 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
         ButterKnife.inject(this);
 
+        titles.add("Jefferson ");
+        titles.add("Ralph");
 
-        al = new ArrayList<>();
-        al.add("php");
-        al.add("c");
-        al.add("python");
-        al.add("java");
-        al.add("html");
-        al.add("c++");
-        al.add("css");
-        al.add("javascript");
+        imageResources.add(R.drawable.bomb);
+        imageResources.add(R.drawable.ic_launcher);
 
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, al );
         adapter = new SwipeCardsCustomAdapter(titles, imageResources, this);
+
 
         flingContainer.setAdapter(adapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
@@ -54,8 +48,13 @@ public class MyActivity extends Activity {
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
-                al.remove(0);
-                arrayAdapter.notifyDataSetChanged();
+                String temp1 = titles.get(0);
+                Integer temp2 = imageResources.get(0);
+                titles.remove(0);
+                imageResources.remove(0);
+                titles.add(temp1);
+                imageResources.add(temp2);
+                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -74,10 +73,7 @@ public class MyActivity extends Activity {
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
                 // Ask for more data here
-                al.add("XML ".concat(String.valueOf(i)));
-                arrayAdapter.notifyDataSetChanged();
-                Log.d("LIST", "notified");
-                i++;
+                adapter.notifyDataSetChanged();
             }
 
             @Override

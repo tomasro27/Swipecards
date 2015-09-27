@@ -9,17 +9,19 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by tomasrodriguez on 9/27/15.
  */
 public class SwipeCardsCustomAdapter extends BaseAdapter {
 
-    String[] titles;
-    int[] images;
+    ArrayList<String> titles;
+    ArrayList<Integer> images;
     Context context;
     private LayoutInflater mInflater;
 
-    public SwipeCardsCustomAdapter(String[] titles, int[] images, Context context) {
+    public SwipeCardsCustomAdapter(ArrayList<String> titles, ArrayList<Integer> images, Context context) {
         this.titles = titles;
         this.images = images;
         this.context = context;
@@ -30,7 +32,7 @@ public class SwipeCardsCustomAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return titles.length;
+        return titles.size();
     }
 
     @Override
@@ -51,7 +53,7 @@ public class SwipeCardsCustomAdapter extends BaseAdapter {
 
             Log.d("getView", "view is null");
             //LayoutInflater vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            Log.d("getView", "layoutinflater vi: " +  mInflater.toString());
+            Log.d("getView", "layoutinflater vi: " + mInflater.toString());
             view = mInflater.inflate(R.layout.item, parentView, false);
             Log.d("getView", "view: " + view.toString());
 
@@ -61,8 +63,8 @@ public class SwipeCardsCustomAdapter extends BaseAdapter {
             Log.d("getView", "textView ID: " + title.getText());
 
 
-            title.setText(this.titles[position]);
-            imgView.setImageResource(this.images[position]);
+            title.setText(this.titles.get(position));
+            imgView.setImageResource(this.images.get(position));
             Log.d("getView" ,  "asdfasdf");
         }
 
